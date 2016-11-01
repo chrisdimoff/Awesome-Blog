@@ -1,0 +1,20 @@
+<h1>Edit your Post</h1>
+
+<%= form_for @post do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <br />
+  <%= f.submit %>
+
+  <div>
+    <%= f.label :category %>
+    <br />
+    <%= f.collection_select :category_id, Category.all, :id, :title %>
+  </div>
+
+<% end %>

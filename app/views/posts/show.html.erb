@@ -1,0 +1,68 @@
+
+<h1><%= @post.title %></h1>
+<h4>Category: <%= @category.title %></h4>
+<p>
+  Created by: <%= @user.first_name%>
+</p>
+<hr />
+<p>
+  <%= @post.body %>
+</p>
+
+<%= link_to 'edit', edit_post_path(@post) %>
+<%= link_to 'delete', post_path(@post),
+                      method: :delete,
+                      data: {confirm: 'Are you sure?'} %>
+
+<hr />
+
+<% if user_signed_in? && can?(:favourite, @post)%>
+    <% if @favourite.present? %>
+      <%= button_to 'Unfavourite', post_favourite_path(@post, @favourite), method: :delete %>
+    <% else %>
+      <%= button_to 'favourite', post_favourites_path(@post), method: :post %>
+    <% end %>
+<% end %>
+
+
+<h4>Comments:</h4>
+
+
+<% @post.comments.each do |comm| %>
+
+  <% user = User.find comm.user_id %>
+
+<div class="comment">
+
+  <div id="comment-body">
+    <div style="float: right;">
+      <%= (comm.created_at).to_formatted_s(:long_ordinal) %>
+    </div>
+    <div>
+      Created By: <%= user.first_name %>
+    </div>
+    <br />
+    <br />
+    <%= comm.body %>
+
+  </div>
+  <%= button_to "Delete", post_comment_path(@post, comm), method: :delete,
+  data: {confirm: 'are you sure?'} %>
+
+</div>
+
+
+
+
+<% end %>
+<br />
+<%= form_for [@post,@comment] do |f| %>
+
+<div>
+  <%= f.text_area :body %>
+</div>
+
+  <%= f.submit %>
+
+
+<% end %>

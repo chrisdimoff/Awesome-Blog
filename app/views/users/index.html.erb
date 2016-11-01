@@ -1,0 +1,8 @@
+<h1>User Index Page</h1>
+
+<% current_user.favourites.each do |fav| %>
+
+  <%= link_to fav.post.title, post_path(fav.post) %>
+  <br />
+
+<% end %>
