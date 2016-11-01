@@ -14,6 +14,9 @@ class Post < ApplicationRecord
 
   validates :body, presence: true
 
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
+
   def body_snippet
     if self.body.length > 100
       return "#{self.body[0..99]}..."
@@ -24,6 +27,14 @@ class Post < ApplicationRecord
 
   def favourite_for(user)
     favourites.find_by(user: user)
+  end
+
+  def user_full_name
+    if user
+      user.full_name
+    else
+      'Anonymous'
+    end
   end
 
 end

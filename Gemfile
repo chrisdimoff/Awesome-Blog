@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # verion) and will use the latest gem that matches the criteria. If a gem is not
 # found then it will install the gem `gem install ..`
 
+gem 'chosen-rails'
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'

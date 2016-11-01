@@ -1,8 +1,12 @@
 
 <h1><%= @post.title %></h1>
 <h4>Category: <%= @category.title %></h4>
+<section  class="tag-widget">
+
+  Tags: <%= @post.tags.map{|t| t.name}.join(', ') %>
+</section>
 <p>
-  Created by: <%= @user.first_name%>
+  Created by: <%= @post.user_full_name%>
 </p>
 <hr />
 <p>

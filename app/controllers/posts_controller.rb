@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post_params = params.require(:post).permit(:title, :body, :category_id)
+    post_params = params.require(:post).permit(:title, :body, :category_id, tag_ids: [])
     @post = Post.new post_params
     @post.user = current_user
 
@@ -28,11 +28,8 @@ class PostsController < ApplicationController
     @comment = Comment.new
 
     @favourite = @post.favourite_for(current_user)
-    if @post.user_id?
-      @user = User.find @post.user_id
-    else
-      @user = User.new
-    end
+
+
   end
 
   def edit
@@ -41,7 +38,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find params[:id]
-    post_params = params.require(:post).permit(:title, :body, :category_id)
+    post_params = params.require(:post).permit(:title, :body, :category_id, tag_ids: [])
 
     if @post.update post_params
       redirect_to post_path(@post)
