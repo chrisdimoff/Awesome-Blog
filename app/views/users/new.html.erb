@@ -1,29 +1,49 @@
-<h1>Sign Up Below</h1>
+<div class="sign-in-container">
 
-<%= form_for @user do |f| %>
+  <%= link_to sign_in_with_google_path do %>
+    <div class="btn-google"></div>
+  <% end %>
 
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+  <%= link_to sign_in_with_facebook_path do %>
+    <div class="btn-facebook"></div>
+  <% end %>
+  <div class="or-container">
+      <span class="or">
+        OR
+      </span>
   </div>
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <%= f.submit "Sign Up" %>
+  <br />
 
 
+  <%= form_for @user do |f| %>
 
-<% end %>
+      <div class="form-object">
+        <%= f.label :first_name %>
+        <br />
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="form-object">
+        <%= f.label :last_name %>
+        <br />
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="form-object">
+        <%= f.label :email %>
+        <br />
+        <%= f.email_field :email %>
+      </div>
+      <div class="form-object">
+        <%= f.label :password %>
+        <br />
+        <%= f.password_field :password %>
+      </div>
+      <div class="form-object">
+        <%= f.label :password_confirmation %>
+        <br />
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <%= f.submit "Sign Up" %>
+
+  <% end %>
+
+</div>

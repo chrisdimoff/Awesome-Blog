@@ -1,3 +1,123 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recent-post {
+  width: 300px;
+  height: 75px;
+  display: inline-block;
+
+ //  background-color: #ECECEA;
+  background-color: #FFFFFF;
+
+ // background-image: url('/linen-grey.jpg');
+  padding-top: 2px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin: 5px 10px;
+  border-color: lightgrey;
+  border-width: 2px;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+}
+
+.recent-comment {
+  width: 400px;
+  // height: 100px;
+  display: inline-block;
+
+ //  background-color: #ECECEA;
+  background-color: #FFFFFF;
+
+ // background-image: url('/linen-grey.jpg');
+  padding-top: 2px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin: 5px 10px;
+  border-color: lightgrey;
+  border-width: 2px;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+}
+
+.recent-post-list {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ width: 50%;
+}
+
+.recent-comment-list {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ width: 50%;
+}
+
+.dashboard-wrapper {
+ display: flex;
+ width: 100%;
+}
+
+.post a {
+  text-decoration: none;
+ //  color: #40446A;
+ // color: #D9853B;
+
+  font-style:normal;
+  font-weight: bold;
+
+}
+
+.recent-comment-title {
+  color: #1B5C5A;
+   font-style:normal;
+   font-weight: bold;
+}
+
+.recent-comment-title a {
+  color: #1B5C5A;
+}
+
+.recent-comment-title a:hover {
+  color: #558C89;
+}
+
+.recent-comment-author {
+
+    color: #558C89;
+    font-size: 12px;
+
+    text-align: left;
+}
+.recent-post-author {
+
+    color: #558C89;
+    font-size: 12px;
+
+    text-align: left;
+}
+
+.recent-comment-info {
+  background-color: #F2F1F9;
+
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: WhiteSmoke;
+  margin-top: 7px;
+  color: #A6A7AB;
+  font-size: 14px;
+  padding-left: 8px;
+}

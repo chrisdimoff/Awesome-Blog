@@ -1,17 +1,47 @@
-<h1>sign in below</h1>
-
-<%= form_tag sessions_path do %>
-
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-
-    <%= submit_tag "Sign IN!" %>
 
 
-<% end %>
+<div class='sign-in-container'>
+
+
+  <%= link_to sign_in_with_google_path do %>
+    <div class="btn-google"></div>
+  <% end %>
+
+  <%= link_to sign_in_with_facebook_path do %>
+    <div class="btn-facebook"></div>
+  <% end %>
+
+
+
+
+
+    <div class="or-container">
+        <span class="or">
+          OR
+        </span>
+    </div>
+    <br />
+  <%= form_tag sessions_path do %>
+    <div class="form-object">
+      <%= label_tag :email %>
+      <br />
+      <%= text_field_tag :email %>
+    </div>
+    <div class='form-object'>
+      <%= label_tag :password %>
+      <br />
+      <%= password_field_tag :password %>
+      <br />
+      <%= link_to "Forgot Password?", new_password_reset_path %>
+    </div>
+
+      <%= submit_tag "Sign In!" %>
+
+  <% end %>
+
+</div>
+
+<script>
+
+
+</script>

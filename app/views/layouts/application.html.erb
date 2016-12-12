@@ -10,25 +10,96 @@
 
   <body>
 
-    <nav>
-      <%= link_to "Home", home_path  %>
-      <%= link_to "About", about_path  %>
-      <%= link_to "New Post", new_post_path  %>
-      <%= link_to "All Posts", posts_path  %>
-      <% if user_signed_in? %>
-          <%= link_to "Sign out", sessions_path, method: :delete  %> |
-          Hello <%= current_user.first_name %>
-          <%= link_to "Edit Info", edit_users_path  %>
-          <%= link_to 'Favourite', users_path  %> |
-      <% else %>
-        <%= link_to "Sign Up", new_user_path  %>
-        <%= link_to "Sign In", new_session_path  %>
+    <navbar class="navbar">
 
-      <% end %>
+      <div class="top-bar">
+        <div class="site-info">
+          <h1>Programming Blog</h1>
+          <!-- <p>A Ruby on Rails project by: Chris Dimoff</p> -->
+        </div>
+      </div>
 
 
-    </nav>
-    <%= notice || alert %>
-    <%= yield %>
+     <div class="link-bar">
+       <!-- <div class="white square"></div> -->
+
+       <!-- <div class='text'> -->
+       <div class='outer-flex'>
+
+         <div class='inner-flex'>
+
+
+        <%= link_to home_path do %>
+        <div class="btn-nav"><span class='nav-text'>Home</span>  </div>
+          <% end %>
+
+         <%= link_to about_path do %>
+         <div class="btn-nav"> <span class='nav-text'>About</span> </div>
+           <% end %>
+
+         <%= link_to posts_path do %>
+         <div class="btn-nav"> <span class='nav-text'>All Posts</span> </div>
+           <% end %>
+
+          </div>
+
+         <!-- <div class='pull-right'> -->
+         <div class="inner-flex">
+
+
+
+           <% if session[:user_id].present? %>
+
+
+              <%= link_to  edit_users_path do %>
+              <div class="btn-nav nav-large"><span class='nav-text'> Hello <%= current_user.first_name %></span> </div>
+                <% end %>
+
+
+              <%= link_to sessions_path, method: :delete do %>
+              <div class="btn-nav"> <span class='nav-text'>Sign Out </span></div>
+              <% end %>
+
+
+              <%= link_to  users_path do %>
+              <div class="btn-nav"> <span class='nav-text'>Favourites</span> </div>
+                <% end %>
+
+
+              <%= link_to new_post_path do %>
+              <div class="btn-nav"><span class='nav-text'>New Post </span> </div>
+                <% end %>
+
+
+           <% else %>
+
+
+              <%= link_to  new_user_path do %>
+              <div class="btn-nav"> <span class='nav-text'>Sign Up</span> </div>
+                <% end %>
+
+
+              <%= link_to new_session_path do %>
+              <div class="btn-nav"> <span class='nav-text'>Sign in</span></div>
+                <% end %>
+
+
+
+
+            <% end %>
+          </div>
+
+        </div>
+        <!-- <div class="white square pull-right"></div> -->
+    </div>
+  </navbar>
+
+    <div class="main">
+      <%= notice || alert %>
+      <%= yield %>
+    </div>
+
   </body>
+
+
 </html>

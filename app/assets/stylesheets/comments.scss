@@ -3,10 +3,50 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#comment-body {
-  background-color: lightblue;
-  padding: 10px;
+.comment-container {
 
+  border-top: 1px solid #74AFAD;
+
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.comment-body {
+
+
+  padding: 0px 30px;
+  width: 80%;
+
+}
+.comment-submit {
+
+  margin-top: 45px;
+  padding: 0px 30px;
+  width: 80%;
+
+}
+
+.comment-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: flex-end;
+
+}
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-top: 10px
+
+}
+
+.icon-link {
+  width: 13px;
+  text-decoration: none;
 }
 
 .comment {
@@ -14,4 +54,15 @@
   margin-right: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+i.fa {
+  color: #558C89;
+}
+
+.comment-author {
+  color: #558C89;
+  font-size: 12px;
+  padding: 5px;
+  text-align: right;
 }

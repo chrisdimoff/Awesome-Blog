@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # verion) and will use the latest gem that matches the criteria. If a gem is not
 # found then it will install the gem `gem install ..`
 
+gem 'font-awesome-rails'
 gem 'chosen-rails'
 gem 'kaminari'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -20,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'rack-cors'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,7 +34,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan'
 gem 'cowsay'
-
+gem "omniauth-google-oauth2"
+gem 'omniauth-facebook'
+gem 'koala'
 gem 'faker'
 
 # Use Capistrano for deployment

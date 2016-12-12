@@ -1,3 +1,211 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#favourite {
+
+  text-align: right;
+  display: inline-block;
+
+}
+
+ .post {
+   width: 300px;
+   height: 200px;
+   display: inline-block;
+
+  //  background-color: #ECECEA;
+   background-color: #FFFFFF;
+
+  // background-image: url('/linen-grey.jpg');
+   padding-top: 2px;
+
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+  margin: 10px;
+   border-color: lightgrey;
+   border-width: 2px;
+  vertical-align: top;
+  position: relative;
+  text-align: left;
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+ }
+
+
+ .post a {
+   text-decoration: none;
+  //  color: #40446A;
+  // color: #D9853B;
+  color: #1B5C5A;
+   font-style:normal;
+   font-weight: bold;
+
+ }
+
+ .post a:hover {
+
+   text-decoration: underline;
+ }
+ .recent-post a {
+   text-decoration: none;
+  //  color: #40446A;
+  // color: #D9853B;
+  color: #1B5C5A;
+   font-style:normal;
+   font-weight: bold;
+
+ }
+
+ .recent-post a:hover {
+
+   text-decoration: underline;
+ }
+
+
+
+.body-snippet {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: -2px;
+  display: inline-block;
+  width: 65%;
+  text-align: left;
+}
+
+.thumbnail {
+  margin-top: 5px;
+  width: 88px;
+  height: 88px;
+  // background-color: grey;
+  float: left;
+  margin-right: 10px;
+}
+
+.post-grid {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.post-content {
+  position: absolute;
+  bottom: 0px;
+  height: 130px;
+}
+
+.post-info {
+  background-color: #F2F1F9;
+
+  height: 20px;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: WhiteSmoke;
+  margin-top: 7px;
+  color: #A6A7AB;
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.post-show-info {
+
+  // background-color: #F2F1F9;
+
+
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: WhiteSmoke;
+  margin-top: 7px;
+  // color: #A6A7AB;
+  color: #558C89;
+  font-size: 12px;
+
+
+  padding: 10px;
+  // width: 200px;
+  align-self: flex-end;
+
+
+
+}
+
+.post-header-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+}
+.post-header-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 50%;
+
+}
+
+.tag-label {
+  color: #558C89
+}
+
+.post-body {
+  padding: 10px 10px;
+}
+
+.post-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tag-show {
+  background-color: #F2F1F9;
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #A6A7AB;
+
+  margin-left: 5px;
+}
+
+.info-label {
+  margin-right: 8px;
+}
+
+
+
+.post-show-wrapper {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.post-title {
+  margin-top: 0px;
+  display: inline-block;
+
+
+  color: #558C89
+}
+
+.owner-button-wrapper {
+
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-around;
+  text-align: right;
+
+}
+
+.column-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

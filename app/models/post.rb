@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
 
+  attr_accessor :facebook_post_this
+
   belongs_to :user
   has_many :comments, dependent: :destroy
   belongs_to :category
@@ -23,6 +25,10 @@ class Post < ApplicationRecord
     else
       return self.body
     end
+  end
+
+  def short_create_date
+    self.created_at.strftime('%m/%d/%Y')
   end
 
   def favourite_for(user)

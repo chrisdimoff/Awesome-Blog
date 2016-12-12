@@ -1,8 +1,36 @@
-<h1>User Index Page</h1>
+
+<div class='post-grid'>
 
 <% current_user.favourites.each do |fav| %>
 
-  <%= link_to fav.post.title, post_path(fav.post) %>
-  <br />
+<div class="post">
 
+  <% post = fav.post %>
+
+  <%= link_to post.title, post_path(post) %>
+
+  <div class='post-info'>
+    <span class="info-label" id="category">In  <%= post.category.title %> </span>
+    <span class="info-label" id="date">on <%= post.short_create_date %></span>
+    <span class="info-label" id="comment-count"><%= post.comments.count %> comments </span>
+
+  </div>
+
+  <div class='post-content'>
+    <div class='thumbnail
+
+    <% if post.category.title.downcase == "misc." %>
+    misc
+    <% else %>
+    <%= post.category.title.downcase %>
+    <% end %>
+
+      '> </div>
+    <p class='body-snippet'>
+      <%= post.body_snippet %>
+    </p>
+  </div>
+</div>
 <% end %>
+
+</div>

@@ -1,0 +1,159 @@
+body {
+  margin-top: 22vh;
+}
+
+
+html {
+  // background-color: #F2F1F9;
+  // background-color: #ECECEA;
+  // #F1F4F9
+
+    background-image: url('/linen-grey.jpg');
+
+}
+navbar {
+  font-size: 20px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  background-color: #FFFFFF;
+  height: 20vh;
+  z-index: 1;
+
+}
+
+.main {
+  font-family: sans-serif;
+  // margin-top: 15vh;
+  max-width: 2000px;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+  padding: 10px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+nav a {
+  z-index: 100000;
+
+}
+
+.pull-right {
+  float:right;
+  height: 100%;
+}
+
+.outer-flex {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.inner-flex {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+
+  text-decoration: none;
+}
+
+.link-bar {
+  height: 30%;
+  width: 100%;
+  // background-color: #DA1E5B;
+  background-color: #558C89;
+  position: absolute;
+  bottom: 0px;
+  display: inline-block;
+  text-align: center;
+
+  // border-width: 1px 0px 0px 0px;
+  //
+  // border-style: solid;
+  // border-color: black;
+
+}
+
+
+.top-bar{
+  padding: 0px;
+  margin: 0px;
+  height: 70%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  background-color: #74AFAD;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+
+
+
+}
+
+
+.site-info h1  {
+
+  margin-top: 5px;
+  margin-bottom: 0px;
+  // color: #11161A;
+  color: white;
+  font-family:Arial, Sans-Serif;
+
+
+}
+
+.site-info p {
+  margin-top: 9px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  color: #474C50
+}
+
+.site-info {
+  margin-left: 14px;
+  font-family: sans-serif;
+
+
+}
+
+.btn-nav {
+  padding-right: 5px;
+  padding-left: 5px;
+  height: 100%;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  vertical-align: top;
+}
+
+.btn-nav:hover {
+  background-color: #1B5C5A;
+}
+
+.inner-flex a {
+  text-decoration: none;
+
+}
+
+.nav-text {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-family: Arial;
+
+}
+
+.nav-large {
+  width: 120px;
+  display: flex;
+  padding-right: 5px;
+}

@@ -1,1 +1,41 @@
-<h1>Home Page</h1>
+
+<div class="dashboard-wrapper">
+
+  <div class="recent-post-list">
+
+    <% @recent_posts.each do |post| %>
+    <div class="recent-post">
+      <%= link_to 'New Post -- ' + post.title, post_path(post) %>
+      <div class="recent-post-author">
+          By <%= post.user.full_name %> at <%= post.short_create_date %>
+      </div>
+      <div class='post-info'>
+        <span class="info-label" id="category">In  <%= post.category.title %> </span>
+        <span class="info-label" id="date">on <%= post.short_create_date %></span>
+        <span class="info-label" id="comment-count"><%= post.comments.count %> comments </span>
+
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+  <div class="recent-comment-list">
+    <% @recent_comments.each do |comment| %>
+    <div class="recent-comment">
+        <% post = comment.post %>
+        <div class="recent-comment-title">
+          New Comment on <%= link_to post.title, post_path(post)  %>
+        </div>
+        <div class="recent-comment-author">
+          By <%= comment.user_full_name %> at <%= comment.short_create_date %>
+        </div>
+
+        <div class="recent-comment-info">
+          <%= comment.comment_snippet %>
+        </div>
+
+    </div>
+    <% end %>
+  </div>
+</div>

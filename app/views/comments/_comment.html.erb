@@ -1,0 +1,38 @@
+<% user = User.find comm.user_id %>
+
+<div class="comment" id="<%= dom_id(comm) %>">
+
+
+
+<div class="comment-container">
+
+
+  <div class="comment-header">
+    <%= link_to  post_comment_path(@post, comm), method: :delete, remote: true,
+    data: {confirm: 'are you sure?'}, class: 'icon-link' do%>
+
+
+      <%= fa_icon "trash" %>
+    <% end %>
+  </div>
+
+
+  <div class='comment-body'>
+    <%= comm.body %>
+
+  </div>
+
+  <div class='comment-footer'>
+    <div class='comment-author'>
+        Created By: <%= user.first_name %> <br />
+       On  <%=
+
+        comm.short_create_date
+
+         %>
+    </div>
+  </div>
+
+</div>
+
+</div>

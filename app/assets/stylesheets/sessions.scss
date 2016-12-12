@@ -1,3 +1,77 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sign-in-container {
+  background-color: white;
+  display: block;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+
+}
+.create-post-container {
+  background-color: white;
+  display: block;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+
+}
+
+
+
+
+.form-object {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+}
+
+.form-object input {
+  width: 100%;
+}
+
+.or-container {
+  width: 100%;
+  height: 20px;
+  border-bottom: 1px solid lightgrey;
+  text-align: center
+}
+
+select {
+  width: 100%;
+}
+
+
+
+.or {
+  position: relative;
+  font-size: 10px;
+  background-color: white;
+  padding: 10px 10px;
+  top: 6px;
+}
+
+
+
+
+.btn-google {
+  background-size: 100% 100%;
+  height: 50px;
+  width: 280px;
+  margin-bottom: 20px;
+  background-image: url('/google.png');
+  border-radius: 5px
+}
+.btn-facebook {
+  background-size: 100% 100%;
+  height: 50px;
+  width: 280px;
+  background-image: url('/facebook.png');
+  border-radius: 5px
+}

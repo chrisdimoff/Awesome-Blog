@@ -1,33 +1,40 @@
-<h1>Edit your Post</h1>
 
-<%= form_for @post do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <br />
+<div class='post-show-wrapper'>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <br />
+  <%= form_for @post do |f| %>
 
-  <div>
-    Tags:  <%= f.collection_select(
-        :tag_ids, Tag.all, :id, :name, {},
-        {multiple: true, class: 'chosen-select'}
-      ) %>
+  <div class="form-object">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
-  <br />
-  <%= f.submit %>
 
+  <div class='form-object'>
+
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
   <div>
     <%= f.label :category %>
     <br />
     <%= f.collection_select :category_id, Category.all, :id, :title %>
   </div>
 
-<% end %>
+  <div class="form-object">
+    <label>Tags: </label> <br /><%= f.collection_select(
+    :tag_ids, Tag.all, :id, :name, {},
+    {multiple: true, class: 'chosen-select'}
+    ) %>
+  </div>
+  <%= f.submit %>
+
+
+  <% end %>
+</div>
 
 <script>
   $('.chosen-select').chosen({width: '300px'})
+  $('#post_body').css('width', '100%')
+  $('#post_body').css('height', '220px')
 
 </script>

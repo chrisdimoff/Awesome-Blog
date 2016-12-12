@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
 
 
+  get '/auth/google_oauth2', as: :sign_in_with_google
+  get '/auth/facebook', as: :sign_in_with_facebook
+
+  get 'auth/google_oauth2/callback' => 'callbacks#google'
+  get 'auth/facebook/callback' => 'callbacks#facebook'
+
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/' => 'home#index', as: :home
@@ -34,5 +45,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create] do
     delete :destroy, on: :collection #this bypasses having id in the url
   end
+
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
 end

@@ -1,14 +1,40 @@
-<h1>All Posts</h1>
-<hr />
 
+
+<div class="post-grid">
 
 
 <% @posts.each do |post| %>
 
-<%= link_to post.title, post_path(post) %>
-<hr />
-<br />
+  <div class="post">
 
-<% end %>
+    <%= link_to post.title, post_path(post) %>
+    <div class="recent-post-author">
+        By <%= post.user_full_name %> at <%= post.short_create_date %>
+    </div>
 
+    <div class='post-info'>
+      <span class="info-label" id="category">In  <%= post.category.title %> </span>
+      <span class="info-label" id="date">on <%= post.short_create_date %></span>
+      <span class="info-label" id="comment-count"><%= post.comments.count %> comments </span>
+
+    </div>
+
+    <div class='post-content'>
+      <div class='thumbnail
+
+      <% if post.category.title.downcase == "misc." %>
+      misc
+      <% else %>
+      <%= post.category.title.downcase %>
+      <% end %>
+
+        '> </div>
+      <p class='body-snippet'>
+        <%= post.body_snippet %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+
+</div>
 <%= paginate @posts %>

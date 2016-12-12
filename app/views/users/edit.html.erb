@@ -1,35 +1,37 @@
-<h1> Edit your info below</h1>
 
-<%= form_for @user do |f|  %>
+<div class='sign-in-container'>
 
-  <div>
+  <%= form_for @user do |f|  %>
+
+  <div class='form-object'>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
-  <div>
+  <div class='form-object'>
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
-  <div>
+  <div class='form-object'>
     <%= f.label :email %>
     <%= f.email_field :email %>
   </div>
 
-  <div>
+  <div class='form-object'>
     <%= f.label :current_password %>
     <%= f.password_field :current_password %>
   </div>
 
 
-  <div>
+  <div class='form-object'>
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
-  <div>
+  <div class='form-object'>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
 
   <%= f.submit %>
-  <%= link_to "Delete User", user_path(@user), method: :delete, data: {confirm: 'are you sure?'} %>
-<% end %>
+  <%= button_to "Delete Profile", user_path(@user), method: :delete, data: {confirm: 'are you sure?'} %>
+  <% end %>
+</div>

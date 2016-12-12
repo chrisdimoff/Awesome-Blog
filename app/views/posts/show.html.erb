@@ -1,72 +1,94 @@
+<div class='post-show-wrapper'>
 
-<h1><%= @post.title %></h1>
-<h4>Category: <%= @category.title %></h4>
-<section  class="tag-widget">
+  <div class='post-header'>
 
-  Tags: <%= @post.tags.map{|t| t.name}.join(', ') %>
-</section>
-<p>
-  Created by: <%= @post.user_full_name%>
-</p>
-<hr />
-<p>
-  <%= @post.body %>
-</p>
-
-<%= link_to 'edit', edit_post_path(@post) %>
-<%= link_to 'delete', post_path(@post),
-                      method: :delete,
-                      data: {confirm: 'Are you sure?'} %>
-
-<hr />
-
-<% if user_signed_in? && can?(:favourite, @post)%>
-    <% if @favourite.present? %>
-      <%= button_to 'Unfavourite', post_favourite_path(@post, @favourite), method: :delete %>
-    <% else %>
-      <%= button_to 'favourite', post_favourites_path(@post), method: :post %>
-    <% end %>
-<% end %>
+    <div class='post-header-left'>
+        <h2 class="post-title"><%= @post.title %></h2>
 
 
-<h4>Comments:</h4>
 
 
-<% @post.comments.each do |comm| %>
+      <section  class="tag-widget">
+        <!-- <span class="tag-label">Tags:</span> -->
 
-  <% user = User.find comm.user_id %>
+          <% for i in 0...@post.tags.length do %>
+          <span class='tag-show'>  <%= @post.tags[i].name %> </span>
+          <% end %>
 
-<div class="comment">
-
-  <div id="comment-body">
-    <div style="float: right;">
-      <%= (comm.created_at).to_formatted_s(:long_ordinal) %>
+      </section>
     </div>
-    <div>
-      Created By: <%= user.first_name %>
-    </div>
-    <br />
-    <br />
-    <%= comm.body %>
 
+    <div class='post-header-right'>
+
+      <div class="column">
+        <div class="column-header">
+
+          <div class='owner-button-wrapper'>
+
+            <div id="favourite">
+              <%= render('favourites/favourite', post: @post, favourite: @favourite) %>
+            </div>
+
+
+
+            <%= link_to edit_post_path(@post), class: 'icon-link' do %>
+            <%= fa_icon "edit" %>
+            <% end %>
+
+            <%= link_to  post_path(@post),
+            method: :delete,
+            data: {confirm: 'Are you sure?'}, class: 'icon-link' do %>
+            <%= fa_icon "trash" %>
+            <% end %>
+          </div>
+        </div>
+
+
+        <div class="post-show-info">
+          Created by: <%= @post.user_full_name%> <br />
+          Category: <%= @category.title %>
+        </div>
+      </div>
+    </div>
   </div>
-  <%= button_to "Delete", post_comment_path(@post, comm), method: :delete,
-  data: {confirm: 'are you sure?'} %>
+
+
+
+
+
+
+
+
+  <p class="post-body">
+    <%= @post.body %>
+  </p>
+
+
+  <div id="comments">
+    <% @post.comments.each do |comm| %>
+      <%= render('comments/comment', comm: comm) %>
+    <% end %>
+  </div>
+
+
+
+
+  <%= form_for [@post,@comment], remote: true do |f| %>
+
+  <div class="comment-submit">
+    <%= f.text_area :body %>
+    <%= f.submit %>
+  </div>
+
+
+  <% end %>
+
 
 </div>
 
+<script>
 
+$('textarea').css('width', '100%')
+$('textarea').css('height', '50px')
 
-
-<% end %>
-<br />
-<%= form_for [@post,@comment] do |f| %>
-
-<div>
-  <%= f.text_area :body %>
-</div>
-
-  <%= f.submit %>
-
-
-<% end %>
+</script>
