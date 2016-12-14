@@ -1,13 +1,19 @@
 <div id="favourite">
   <% if user_signed_in? && can?(:favourite, @post)%>
     <% if favourite&.persisted? %>
+
       <%= link_to post_favourite_path(post, favourite), method: :delete, remote: true do %>
         <%= fa_icon "bookmark" %>
       <% end %>
+
     <% else %>
+
       <%= link_to  post_favourites_path(post), method: :post, remote: true do %>
-      <%= fa_icon "bookmark-o" %>
-        <% end %>
+        <%= fa_icon "bookmark-o" %>
+      <% end %>
+
     <% end %>
-    <% end %>
+
+  <% end %>
+  
 </div>
