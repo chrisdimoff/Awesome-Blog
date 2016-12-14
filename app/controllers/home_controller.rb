@@ -12,6 +12,13 @@ class HomeController < ApplicationController
       end
     end
 
+    if user_signed_in?
+      render :index
+    else
+      redirect_to posts_path
+    end
+      
+
   end
 
   def about
